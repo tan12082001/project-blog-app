@@ -1,0 +1,19 @@
+To create migration files for the models, User, Post, Comment and Like
+
+User - Model: CreateUsers
+    `rails generate migration CreateUsers name:string photo:text bio:text posts_counter:integer`
+
+Post - Model: CreatePosts
+    `rails generate migration CreatePosts title:string text:text comments_counter:integer likes_counter:integer`
+
+Comment - Model: CreateComments
+    `rails generate migration CreateComments text:text`
+
+Like - Model: CreateLikes
+    `rails generate migration CreateLikes`
+
+To create
+    `rails db:migrate`
+
+To Add foreign keys and indexes
+
