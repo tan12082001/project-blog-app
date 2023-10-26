@@ -85,8 +85,11 @@ In order to run this project you need:
 
 Clone this repository to your desired folder:
 
+```
   cd my-folder
   git clone git@github.com:tan12082001/project-blog-app.git
+
+```
 
 ### Install
 
@@ -103,7 +106,11 @@ Create database:
 
 To run the server:
 
-- rails server
+```
+
+ rails server
+
+```
 
 Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
@@ -111,7 +118,11 @@ Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
 To run tests, run the following command:
 
+ ```
+ 
  rspec spec/
+
+ ```
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
