@@ -2,10 +2,13 @@
 
 first_user = User.new(name: "Tom", photo: "https://unsplash.com/photos/F_-0BxGuVvo", bio: "Teacher from Mex
 ico.")
+first_user.save
 second_user = User.new(name: "Lilly", photo: "https://unsplash.com/photos/F_-0BxGuVvo", bio: "Teacher from Poland.")
+second_user.save
 third_user = User.new(name: "Tanu", photo: "https://unsplash.com/photos/F_-0BxGuVvo", bio: "Teacher from Earth.")
-
+third_user.save
 first_post = Post.new(author: first_user, title: "user 1 t", text: "User 1 first post with title 'user 1 t'")
+first_post.save
 second_post = Post.create(author: first_user, title: "user 1 t2", text: "User 1 second post with title 'use
 r 1 t2'")
 third_post = Post.create(author: first_user, title: "user 1 t3", text: "User 1 third post with title 'user 1 t3'")
