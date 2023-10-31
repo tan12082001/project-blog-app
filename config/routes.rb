@@ -1,8 +1,8 @@
 Rails.application.routes.draw do
   root "users#index"
 
-  resources :users do
-    resources :posts
+  resources :users, only: [:index, :show] do
+    resources :posts, only: [:index, :show]
   end
 
   # Reveal health status on /up that returns 200 if the app boots with no exceptions, otherwise 500.
