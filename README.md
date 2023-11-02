@@ -88,11 +88,12 @@ Clone this repository to your desired folder:
 Install the dependencies:
 
 - gem install
-- npm install
 
 Create database:
 
 - bin/rails db:create
+
+Note: Refer `initial_CRUD.txt` to add users, posts, comments data using `rails console`.
 
 ### Usage
 
