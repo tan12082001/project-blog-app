@@ -19,7 +19,7 @@ RSpec.describe 'Users', type: :request do
     end
 
     it 'should render placeholder from index method' do
-      expect(response.body).to include('<h1>Users<h1>')
+      expect(response.body).to include('Number of posts: ')
     end
   end
 
@@ -44,7 +44,7 @@ RSpec.describe 'Users', type: :request do
     end
 
     it 'should render placeholder from show method' do
-      expect(response.body).to include('<h1>Single User<h1>')
+      expect(response.body).to include('Number of posts: ')
     end
   end
 end

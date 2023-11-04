@@ -93,8 +93,6 @@ Create database:
 
 - bin/rails db:create
 
-Note: Refer `initial_CRUD.txt` to add users, posts, comments data using `rails console`.
-
 ### Usage
 
 To run the server:
