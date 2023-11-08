@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   devise_for :users
   root "users#index"
-
+  get '/login', to: 'login#index'
   resources :users, only: [:index, :show] do
     resources :posts, only: [:index, :new, :create, :show] do
       resources :comments, only: [:new, :create]
