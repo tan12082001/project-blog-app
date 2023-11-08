@@ -120,6 +120,11 @@ To run tests, run the following command:
 
 ## 👥 Authors <a name="authors"></a>
 
+👤: **Antoine Makdessy**
+
+- GitHub: [@ANTOINE1128](https://github.com/ANTOINE1128)
+- LinkedIn: [LinkedIn](https://www.linkedin.com/in/antoine-makdessy/)
+
 👤 **Tanmayi Manku**
 
 - GitHub: [@tan12082001](https://github.com/tan12082001)
