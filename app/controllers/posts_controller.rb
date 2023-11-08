@@ -2,7 +2,7 @@ class PostsController < ApplicationController
   layout 'boilerplate'
   def index
     @user = User.find(params[:user_id])
-    @posts = Post.where(author_id: params[:user_id]).includes(:comments).order(id: :asc)
+    @posts = @user.posts.includes(:comments).order(id: :asc)
     @posts = @posts.paginate(page: params[:page], per_page: 2)
   end
 
