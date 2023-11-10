@@ -11,6 +11,7 @@ class Ability
     can :manage, Post, author_id: user.id
     can :create, Comment
     can :manage, Comment, user_id: user.id
+    can :destroy, Like, user_id: user.id
 
     # Abilities for admin users
     can :manage, :all if user.admin?
