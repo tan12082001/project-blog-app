@@ -11,6 +11,14 @@ class PostsController < ApplicationController
     @post = Post.find(params[:id])
   end
 
+  def destroy
+    @comment = Comment.find(params[:id])
+    @comment.post.decrement!(:comments_counter)
+    @comment.destroy!
+    flash[:success] = 'Comment deleted.'
+    redirect_to user_post_path(id: @comment.post_id, user_id: @comment.user_id)
+  end
+
   def new
     @post = Post.new
   end
