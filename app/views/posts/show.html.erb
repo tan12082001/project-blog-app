@@ -9,12 +9,6 @@
 
     <%= render partial: "likes/like_post", locals: {post: @post} %>
 
-    <% if can? :destroy, @post %>
-        <%= form_with(model: @post, url: user_post_path(@post.author, @post), method: :delete, id: 'delete-post-form') do |form| %>
-            <%= form.submit "Delete Post", id: 'delete-post-submit' %>
-        <% end %>
-    <% end %>
-
     <div id="comments-container">
         <% if @post.comments.empty? %>
             <p class="each-commnet">No comments yet!</p>
@@ -41,5 +35,11 @@
 
     <% if can? :create, Comment %>
       <h2 class="add-comment"><%= link_to 'Comment on the Post!', new_user_post_comment_path(@post.author, @post) %><h2>
+    <% end %>
+
+    <% if can? :destroy, @post %>
+        <%= form_with(model: @post, url: user_post_path(@post.author, @post), method: :delete, id: 'delete-post-form') do |form| %>
+            <%= form.submit "Delete Post", id: 'delete-post-submit' %>
+        <% end %>
     <% end %>
 </div>
