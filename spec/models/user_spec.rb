@@ -2,7 +2,9 @@ require 'rails_helper'
 
 RSpec.describe User, type: :model do
   before :all do
-    @user = User.create(name: 'User spec')
+    Post.delete_all
+    User.delete_all
+    @user = User.create(name: 'User spec', email: 'testmail@gmail.com', password: '123456')
   end
 
   context '#Create instance' do
@@ -42,24 +44,26 @@ RSpec.describe User, type: :model do
   end
 
   context '#three_recent_posts' do
-    new_user = User.new(name: 'Tan')
-    4.times { |i| Post.create(author: new_user, title: "Post #{i + 1}") }
+    before :all do
+      @new_user = User.create(name: 'Tan', email: 'testmailtwo@gmail.com', password: 'testmailtwo')
+      4.times { |i| Post.create(author: @new_user, title: "Post #{i + 1}") }
+    end
 
     it 'check if there are no posts to a user' do
       expect(@user.three_recent_posts.length).to eq(0)
     end
 
     it 'should return three recent posts of a user' do
-      expect(new_user.three_recent_posts.length).to eq 3
+      expect(@new_user.three_recent_posts.length).to eq 3
     end
 
     it 'check the title of first post from three recent posts' do
-      posts = new_user.three_recent_posts
+      posts = @new_user.three_recent_posts
       expect(posts.first.title).to eq('Post 4')
     end
 
     it 'check the title of last post from three recent posts' do
-      posts = new_user.three_recent_posts
+      posts = @new_user.three_recent_posts
       expect(posts.last.title).to eq('Post 2')
     end
   end
